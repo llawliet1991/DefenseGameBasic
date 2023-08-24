@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDefense
+namespace GameDefense.Basic
 {    public class Const
     {
         public const string PLAYER_TAG = "Player";
         public const string ENEMY_TAG = "Enemy";
-        public const string ENEMY_WEAPON_TAG = "EnemyWeapon ";
+        public const string ENEMY_WEAPON_TAG = "EnemyWeapon";
 
         public const string ATTACK_ANIM = "attacking";
         public const string DEAD_ANIM = "dead";
