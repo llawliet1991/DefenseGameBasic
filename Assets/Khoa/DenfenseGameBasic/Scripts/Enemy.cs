@@ -30,7 +30,8 @@ namespace GameDefense.Basic
         void Update()
         {
             if (IsComponentsNull()) return;
-            if (Vector2.Distance(m_player.transform.position, transform.position) <= atkDistance)
+            float disToPlayer = Vector2.Distance(m_player.transform.position, transform.position);
+            if (disToPlayer <= atkDistance)
             {              
                 m_anim.SetBool(Const.ATTACK_ANIM,true);              
                 m_rb.velocity = Vector2.zero;
@@ -40,5 +41,13 @@ namespace GameDefense.Basic
                 m_rb.velocity = new Vector2(-speed, m_rb.velocity.y);
             }
         }
+        public void Die()
+        {
+            if (IsComponentsNull()) return;
+            m_anim.SetTrigger(Const.DEAD_ANIM);
+            m_rb.velocity = Vector2.zero;
+            gameObject.layer = LayerMask.NameToLayer(Const.DEAD_PLAYER);
+        }
+
     }
 }
